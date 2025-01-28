@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JackBus | Metrobus Tracker</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <h1>Jackbus™ Metrobus Tracker</h1>
+    <div class="container">
+        <div id="map"></div>
+        <button class="accordion">Click here for raw data</button>
+        <div class="panel" id="rawData">
+            <!-- Raw data from JSON inserted here -->
+        </div>
+    </div>
+
+    <div class="bus-numbers-toggle" onclick="toggleBusNumbers()">Bus Numbers</div>
+
+    <div class="bus-numbers" id="busNumbers"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
