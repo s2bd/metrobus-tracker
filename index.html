@@ -32,19 +32,21 @@
     <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Jackbus™ Metrobus Tracker</h1>
+    <h1 id="animatedHeading">Jackbus™ Metrobus Tracker</h1>
     <div class="container">
         <div id="map"></div>
+        <div id="refreshOverlay" class="refresh-overlay" onclick="handleRefresh()">Refresh</div>
+        <div id="timerOverlay" class="timer-overlay">Updating in ...</div>
         <button class="accordion">Click here for raw data</button>
+        
         <div class="panel" id="rawData">
             <!-- Raw data from JSON inserted here -->
         </div>
     </div>
-
+    
     <div class="bus-numbers-toggle" onclick="toggleBusNumbers()">Bus Numbers</div>
-
     <div class="bus-numbers" id="busNumbers"></div>
-
+    
     <script src="script.js"></script>
 </body>
 </html>
