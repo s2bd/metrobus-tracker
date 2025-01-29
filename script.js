@@ -36,6 +36,26 @@ function updateTimer() {
     timerElement.textContent = `Updating in ${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 }
 
+async function updateLocalTime() {
+    try {
+        const response = await fetch("https://www.timeapi.io/api/Time/current/zone?timeZone=America/St_Johns");
+        const data = await response.json();
+        const { hour, minute } = data;
+        let ampm = hour >= 12 ? "PM" : "AM";
+        let hours = hour % 12 || 12;
+        let minutes = minute < 10 ? "0" + minute : minute;
+        const formattedTime = `${hours}:${minutes} ${ampm}`;
+        document.getElementById("localTimeOverlay").textContent = formattedTime;
+
+        if (hour >= 0 && hour < 6) {
+            document.getElementById("timerOverlay").textContent = "⚠️ no Metrobus service";
+        } 
+    } catch (error) {
+        console.error("Error fetching local time:", error);
+    }
+}
+
+
 function resetTimer() {
     clearInterval(countdownTimer);
     timeRemaining = 300;
@@ -175,5 +195,7 @@ function handleRefresh() {
     resetTimer();
 }
 
+setInterval(updateLocalTime, 1000);
 setInterval(updateMap, 300000);
 updateMap();
+updateLocalTime();
