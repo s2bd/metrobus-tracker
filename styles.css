@@ -60,19 +60,28 @@ h1 {
     50% { transform: scale(1.5); }
 }
 
-.refresh-overlay {
+.overlay-container {
     position: absolute;
     top: 10px;
-    right: 180px; /* Position to the left of the timer overlay */
+    right: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.refresh-overlay, .timer-overlay {
     padding: 8px 15px;
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
-    font-size: 16px;
+    font-size: 0.9rem;
     font-weight: bold;
     border-radius: 5px;
     z-index: 1000;
-    cursor: pointer;
     text-align: center;
+}
+
+.refresh-overlay {
+    cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
@@ -81,14 +90,14 @@ h1 {
     color: black;
 }
 
-.timer-overlay {
+.local-time-overlay {
     position: absolute;
     top: 10px;
-    right: 10px;
+    left: 10px;
     padding: 8px 15px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.7);
+    color: black;
+    font-size: 0.9rem;
     font-weight: bold;
     border-radius: 5px;
     z-index: 1000;
