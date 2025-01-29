@@ -31,12 +31,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
 </head>
-<body>
-    <h1 id="animatedHeading">Jackbus™ Metrobus Tracker</h1>
+<body><!-- Dewan Mukto was here -->
+    <h1 id="animatedHeading">Jackbus™ Metrobus Tracker</h1><!-- named after Jack Arthur Harrhy -->
     <div class="container">
         <div id="map"></div>
+        <div id="localTimeOverlay" class="local-time-overlay">⏳</div>
+      <div class="overlay-container">
         <div id="refreshOverlay" class="refresh-overlay" onclick="handleRefresh()">Refresh</div>
         <div id="timerOverlay" class="timer-overlay">Updating in ...</div>
+      </div>
         <button class="accordion">Click here for raw data</button>
         
         <div class="panel" id="rawData">
